@@ -62,7 +62,9 @@ const Form = ({ addNewBudgetElement }) => {
 
           {/* Description */}
 
-          <label htmlFor="description">description</label>
+          <label className="form-check-label description" htmlFor="description">
+            description
+          </label>
           <input
             className="form-control"
             {...register("description", {
