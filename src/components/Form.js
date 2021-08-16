@@ -18,13 +18,12 @@ const Form = ({ addNewBudgetElement }) => {
 
   const getBackToForm = () => {
     setIsFormSend((prev) => !prev);
-    reset();
   };
 
   const onSubmit = (data) => {
+    reset();
     addNewBudgetElement(data);
     setIsFormSend((prev) => !prev);
-    reset();
   };
 
   return (
@@ -32,35 +31,35 @@ const Form = ({ addNewBudgetElement }) => {
       <div className="formContainer">
         {/* TYPE */}
 
-        <div className="form-check">
-          <input
-            className="form-check-input"
-            {...register("expense", { required: "field is required" })}
-            type="radio"
-            value="expense"
-            id="expense"
-          />
-          <label className="form-check-label" htmlFor="expense">
-            expense
-          </label>
-        </div>
-
-        <div className="form-check">
-          <input
-            className="form-check-input"
-            {...register("expense", { required: "field is required" })}
-            type="radio"
-            value="income"
-            id="income"
-          />
-          <label className="form-check-label" htmlFor="income">
-            income
-          </label>
-        </div>
-
-        {errors.expense && <p className="error">{errors.expense.message}</p>}
-
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              {...register("expense", { required: "field is required" })}
+              type="radio"
+              value="expense"
+              id="expense"
+            />
+            <label className="form-check-label" htmlFor="expense">
+              expense
+            </label>
+          </div>
+
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              {...register("expense", { required: "field is required" })}
+              type="radio"
+              value="income"
+              id="income"
+            />
+            <label className="form-check-label" htmlFor="income">
+              income
+            </label>
+          </div>
+
+          {errors.expense && <p className="error">{errors.expense.message}</p>}
+
           {/* Description */}
 
           <label htmlFor="description">description</label>
