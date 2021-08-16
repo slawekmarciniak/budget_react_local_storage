@@ -2,35 +2,9 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Form, Budget, Income, Expense } from "./components/";
 import { v4 as uuidv4 } from "uuid";
+import { incomesData, expensesData } from "./data/data";
 
 const myBudget = 100;
-
-const incomesData = [
-  { id: 1, description: "salary", amount: "2000", category: "salary" },
-  { id: 2, description: "sold car", amount: "5000", category: "other" },
-  {
-    id: 3,
-    description: "bonus for work in extra hours",
-    amount: "1000",
-    category: "salary",
-  },
-];
-
-const expensesData = [
-  {
-    id: 1,
-    description: "buy new computer",
-    amount: "3000",
-    category: "shopping",
-  },
-  { id: 2, description: "buy new bike", amount: "4000", category: "hobby" },
-  {
-    id: 3,
-    description: "go to cinema and restaurant",
-    amount: "300",
-    category: "hobby",
-  },
-];
 
 function App() {
   const incomesLocalStorage = JSON.parse(localStorage.getItem("incomes"));
